@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://CheckPoint(Tutorial).png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 527, 22 )
+
+[node name="main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 384, 322 )
+
+[node name="ground" type="StaticBody2D" parent="."]
+position = Vector2( 511, 582 )
+
+[node name="Sprite" type="Sprite" parent="ground"]
+scale = Vector2( 65.875, 3 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 48, 0, 16, 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground"]
+shape = SubResource( 1 )
